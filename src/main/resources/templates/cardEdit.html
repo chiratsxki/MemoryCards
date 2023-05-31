@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leyla Cards</title>
+  <link rel="icon" type="image/png" href="https://github.com/chiratsxki/SimpleBlockchain/assets/107635322/2973dfa2-ec8d-42d2-99dc-6729c213b3e5">
+
+  <style>
+    body {
+      background-color: #17171a;
+    }
+
+    .gray-square {
+      background-color: #202026;
+      position: fixed;
+      width: 350px;
+      height: 100vh;
+      float: left;
+    }
+
+    h2 {
+      color: white;
+    }
+
+    h3 {
+      color: white;
+    }
+
+    .labelIcon {
+      position: absolute;
+      top: 40px;
+      left: 20px;
+    }
+
+    .labelText {
+      position: absolute;
+      top: 36px;
+      left: 90px;
+    }
+
+    .gray-button {
+      background-color: #202026;
+      position: absolute;
+      border: none;
+      top: 135px;
+      left: 20px;
+      color: #202027;
+      width: 320px;
+      padding: 10px 20px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .saveCard {
+      width: 100px;
+      height: 50px;
+      border-radius: 10px;
+      background-color: #202027;
+      position: absolute;
+      top: 340px;
+      left: 110px;
+      border: none;
+      box-shadow: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .saveCard:hover {
+      background-color: #7e8386;
+    }
+
+    .gray-button2 {
+      background-color: #202026;
+      position: absolute;
+      border: none;
+      top: 220px;
+      left: 20px;
+      color: #202027;
+      width: 320px;
+      padding: 10px 20px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .gray-button:hover {
+      background-color: #3c3f41;
+    }
+
+    .gray-button2:hover {
+      background-color: #3c3f41;
+    }
+
+    .custom-font {
+      font-family: sans-serif,serif;
+      left: 20px;
+      color: white;
+    }
+
+    .custom-font2 {
+      font-family: sans-serif,serif;
+      color: white;
+    }
+
+    .leylaText {
+      font-family: sans-serif,serif;
+      color: white;
+    }
+
+    .input-container {
+      width: 300px;
+      height: 400px;
+      position: absolute;
+      top: 200px;
+      left: 800px;
+      background-color: #202027;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+
+    input {
+      margin: 5px;
+      padding: 5px;
+    }
+
+    input[type="text"] {
+      background-color: #38383a;
+      border: none;
+      width: 265px;
+      color: white;
+      padding:10px;
+      border-radius:10px;
+    }
+  </style>
+</head>
+<body>
+<div class="gray-square">
+  <div class="label">
+    <div class="labelIcon">
+      <img src="https://github.com/chiratsxki/SimpleBlockchain/assets/107635322/2973dfa2-ec8d-42d2-99dc-6729c213b3e5" width="60" height="60">
+    </div>
+    <div class="labelText">
+      <h2 class="leylaText">Leyla Cards</h2>
+    </div>
+  </div>
+  <a href="/allCards">
+    <button class="gray-button" >
+      <h3 class="custom-font">Your cards</h3>
+    </button>
+  </a>
+  <a href="/addCard">
+    <button class="gray-button2" >
+      <h3 class="custom-font2">Add card</h3>
+    </button>
+  </a>
+</div>
+<div class="input-container">
+  <form method="post">
+    <div th:each="el : ${post}">
+      <h3 class="custom-font" align="center">Edit Card</h3>
+      <label ><h3 class="custom-font">Front</h3></label>
+      <input type="text" style="background-color: #2d2f31" th:value="${el.frontSide}" name="frontSide" autocomplete="off" placeholder="Add front side of card">
+      <label><h3 class="custom-font">Back</h3></label>
+      <input type="text" style="background-color: #2d2f31" th:value="${el.backSide}" name="backSide" autocomplete="off" placeholder="Add back side of card">
+      <button type="submit" class="saveCard"><h3>edit</h3></button>
+    </div>
+  </form>
+</div>
+</body>
+</html>

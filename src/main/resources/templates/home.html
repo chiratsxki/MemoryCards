@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leyla Cards</title>
+    <link rel="icon" type="image/png" href="https://github.com/chiratsxki/SimpleBlockchain/assets/107635322/2973dfa2-ec8d-42d2-99dc-6729c213b3e5">
+    <style>
+        body {
+            background-color: #17171a;
+        }
+
+        .gray-square {
+            background-color: #202026;
+            position: fixed;
+            width: 350px;
+            height: 100vh;
+            float: left;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        .labelIcon {
+            position: absolute;
+            top: 40px;
+            left: 20px;
+        }
+
+        .labelText {
+            position: absolute;
+            top: 200px;
+            left: 1070px;
+        }
+
+        .gray-button {
+            background-color: #202026;
+            position: absolute;
+            border: none;
+            top: 135px;
+            left: 20px;
+            color: #202027;
+            width: 320px;
+            padding: 10px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .gray-button2 {
+            background-color: #202026;
+            position: absolute;
+            border: none;
+            top: 220px;
+            left: 20px;
+            color: #202027;
+            width: 320px;
+            padding: 10px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .gray-button:hover {
+            background-color: #3c3f41;
+        }
+
+        .gray-button2:hover {
+            background-color: #3c3f41;
+        }
+
+        .custom-font {
+            font-family: sans-serif,serif;
+            left: 20px;
+            color: white;
+        }
+
+        .custom-font2 {
+            font-family: sans-serif,serif;
+            color: white;
+        }
+
+        .leylaText {
+            font-family: sans-serif,serif;
+            color: white;
+        }
+
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        input[type="text"] {
+            background-color: #424244;
+            border: none;
+            width: 265px;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .homeIcon {
+            position: absolute;
+            top: 218px;
+            left: 1035px;
+        }
+
+        .leftUpSq {
+            position: absolute;
+            background-color: #202026;
+            top: 275px;
+            left: 760px;
+            width: 350px;
+            height: 120px;
+
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 10px;
+
+        }
+
+        .rightUpSq {
+            position: absolute;
+            background-color: #202026;
+            top: 275px;
+            left: 1140px;
+            width: 350px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .leftDownSq {
+            position: absolute;
+            background-color: #202026;
+            top: 427px;
+            left: 760px;
+            width: 350px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .rightDownSq {
+            position: absolute;
+            background-color: #202026;
+            top: 427px;
+            left: 1140px;
+            width: 350px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .h3ForSq {
+            font-family: sans-serif,serif;
+            color: white;
+        }
+
+        .pForSq {
+            font-family: sans-serif,serif;
+            color: #6d6d76;
+        }
+
+        .linkedInButton {
+            width: 100px;
+            height: 50px;
+            border-radius: 30px;
+            background-color: #17171b;
+            position: absolute;
+            top: 590px;
+            left: 1010px;
+            border: none;
+            box-shadow: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .linkedInButton:hover {
+            background-color: #3d89b0;
+        }
+
+        .textLinked {
+            font-family: sans-serif,serif;
+            color: #636164;
+            position: absolute;
+            left: 40px;
+        }
+
+        .githubButton {
+            width: 100px;
+            height: 50px;
+            border-radius: 30px;
+            background-color: #17171b;
+            position: absolute;
+            top: 590px;
+            left: 1165px;
+            border: none;
+            box-shadow: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .githubButton:hover {
+            background-color: #bc4ce7;
+        }
+
+        .textGit {
+            font-family: sans-serif,serif;
+            color: #636164;
+            position: absolute;
+            left: 40px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="gray-square">
+    <div class="label">
+        <div class="labelIcon">
+        <img src="https://github.com/chiratsxki/SimpleBlockchain/assets/107635322/2973dfa2-ec8d-42d2-99dc-6729c213b3e5" width="60" height="60">
+        </div>
+    </div>
+    <a href="/allCards">
+        <button class="gray-button" >
+            <h3 class="custom-font">Your cards</h3>
+        </button>
+    </a>
+    <a href="/addCard">
+        <button class="gray-button2" >
+            <h3 class="custom-font2">Add card</h3>
+        </button>
+    </a>
+</div>
+<div class="homeText">
+    <div class="labelText">
+        <h2 class="leylaText">Leyla Cards</h2>
+    </div>
+    <div class="homeIcon">
+        <img src="https://github.com/chiratsxki/SimpleBlockchain/assets/107635322/2973dfa2-ec8d-42d2-99dc-6729c213b3e5" width="30" height="30">
+    </div>
+    <div class="leftUpSq">
+        <p class="h3ForSq" style="text-align: center">What is Leyla Cards?</p>
+        <p class="pForSq">Leyla Cards are flashcards, which can be used to improve memory retention and recall, and they are an effective way to study for exams</p>
+    </div>
+    <div class="rightUpSq">
+        <p class="h3ForSq" style="text-align: center">What are flashcards?</p>
+        <p class="pForSq">Flashcards are cards that bear information on both sides, which are intended to be used as an aid in memorization</p>
+    </div>
+    <div class="leftDownSq">
+        <p class="pForSq" style="text-align: center">They are often used to memorize vocabulary, historical dates, formulae, or any subject matter that can be learned via a question-and-answer format.Flashcards can be used in various ways to improve the way you make and study them.</p>
+    </div>
+    <dev class="rightDownSq">
+        <p class="pForSq" style="text-align: center">They are an application of the testing effect, which is the finding that long-term memory is increased when some of the learning period is devoted to retrieving the information through testing with proper feedback.</p>
+    </dev>
+</div>
+<div class="linkedIn">
+    <a href="https://www.linkedin.com/in/maksim-abidjanov-b35a74240">
+        <button class="linkedInButton">
+            <img  src="https://github.com/chiratsxki/BullsAndCows/assets/107635322/d1cb4871-359a-4561-a209-3b8e16b1d19e" width="30" height="30" style="float: left">
+            <p class="textLinked">LinkedIn<p>
+        </button>
+    </a>
+</div>
+<div class="github">
+    <a href="https://github.com/chiratsxki/LeylaCards">
+    <button class="githubButton">
+        <img  src="https://github.com/chiratsxki/BullsAndCows/assets/107635322/7aec230a-a1b2-433b-9eec-6da598774140" width="30" height="30" style="float: left">
+        <p class="textGit">GitHub<p>
+    </button>
+    </a>
+</div>
+</body>
+</html>

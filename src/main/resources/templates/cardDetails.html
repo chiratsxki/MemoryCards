@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leyla Cards</title>
+  <link rel="icon" type="image/png" href="https://github.com/chiratsxki/SimpleBlockchain/assets/107635322/2973dfa2-ec8d-42d2-99dc-6729c213b3e5">
+
+  <style>
+    body {
+      background-color: #17171a;
+    }
+
+    .gray-square {
+      background-color: #202026;
+      position: fixed;
+      width: 350px;
+      height: 100vh;
+      float: left;
+    }
+
+    h2 {
+      color: white;
+    }
+
+    h3 {
+      color: white;
+    }
+
+    .labelIcon {
+      position: absolute;
+      top: 40px;
+      left: 20px;
+    }
+
+    .labelText {
+      position: absolute;
+      top: 36px;
+      left: 90px;
+    }
+
+    .gray-button {
+      background-color: #202026;
+      position: absolute;
+      border: none;
+      top: 135px;
+      left: 20px;
+      color: #202027;
+      width: 320px;
+      padding: 10px 20px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .gray-button2 {
+      background-color: #202026;
+      position: absolute;
+      border: none;
+      top: 220px;
+      left: 20px;
+      color: #202027;
+      width: 320px;
+      padding: 10px 20px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .gray-button:hover {
+      background-color: #3c3f41;
+    }
+
+    .gray-button2:hover {
+      background-color: #3c3f41;
+    }
+
+    .custom-font {
+      font-family: sans-serif,serif;
+      left: 20px;
+      color: white;
+    }
+
+    .custom-font2 {
+      font-family: sans-serif,serif;
+      color: white;
+    }
+
+    .leylaText {
+      font-family: sans-serif,serif;
+      color: white;
+    }
+
+    input {
+      margin: 5px;
+      padding: 5px;
+    }
+
+    input[type="text"] {
+      background-color: #424244;
+      border: none;
+      width: 265px;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .viewCard {
+      width: 300px;
+      height: 400px;
+      position: absolute;
+      top: 200px;
+      left: 800px;
+      background-color: #202027;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .viewOfFront {
+      font-family: sans-serif,serif;
+      color: white;
+
+
+    }
+
+    .editButton {
+      background-color: #202027;
+      position: absolute;
+      border: none;
+      top: 340px;
+      left: 30px;
+      color: #ffffff;
+      width: 100px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .editButton:hover {
+      background-color: #535859;
+    }
+
+    .deleteButton {
+      background-color: #202027;
+      position: absolute;
+      border: none;
+      top: 340px;
+      left: 190px;
+      color: #ffffff;
+      width: 100px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .deleteButton:hover {
+      background-color: #cc4949;
+    }
+  </style>
+</head>
+<body>
+<div class="gray-square">
+  <div class="label">
+    <div class="labelIcon">
+      <img src="https://github.com/chiratsxki/SimpleBlockchain/assets/107635322/2973dfa2-ec8d-42d2-99dc-6729c213b3e5" width="60" height="60">
+    </div>
+    <div class="labelText">
+      <h2 class="leylaText">Leyla Cards</h2>
+    </div>
+  </div>
+  <a href="/allCards">
+    <button class="gray-button" >
+      <h3 class="custom-font">Your cards</h3>
+    </button>
+  </a>
+  <a href="/addCard">
+    <button class="gray-button2" >
+      <h3 class="custom-font2">Add card</h3>
+    </button>
+  </a>
+  </a>
+</div>
+<div th:each="el : ${post}">
+  <div class="viewCard">
+    <h2 class="viewOfFront">Front</h2>
+    <a class="viewOfFront" th:text="${el.frontSide}"/>
+    <h2 class="viewOfFront">Back</h2>
+    <a class="viewOfFront" th:text="${el.backSide}"/>
+    <a th:href="'/card/' + ${el.id} + '/edit'">
+      <button class="editButton">
+        <p class="custom-font">Edit</p>
+      </button>
+    </a>
+    <form th:action="'/card/' + ${el.id} + '/remove'" method="post">
+        <button type="submit" class="deleteButton">
+          <p class="custom-font">Delete</p>
+        </button>
+      </a>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
