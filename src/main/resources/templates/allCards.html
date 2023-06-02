@@ -113,6 +113,9 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 10px;
+      position: relative;
+      bottom: 5px;
+      flex-direction: column;
     }
 
     .aHrefForDetails {
@@ -122,8 +125,8 @@
 
     .details {
       background-color: #202026;
-      left: -15px;
-      top: 150px;
+
+      top: 135px;
       position: relative;
       border: none;
       color: #ffffff;
@@ -138,11 +141,9 @@
     }
 
     .container {
-      position: relative;
-      bottom: 5px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      position: absolute;
+      top: 2%;
+      left: 50%;
     }
 
     .posH3 {
@@ -175,14 +176,15 @@
 <div class="container">
   <div th:each="el : ${cards}" class="viewCard">
     <div class="posH3">
-      <h3 class="aHrefForDetails" th:text="${el.frontSide}"></h3>
+      <h3 align="center" class="aHrefForDetails" th:text="${el.frontSide}"></h3>
     </div>
-    <div>
+
       <a class="aHrefForDetails" th:href="'/allCards/' + ${el.id}">
         <button class="details" >Details</button>
       </a>
-    </div>
   </div>
-</div>
+
+  </div>
+
 </body>
 </html>
