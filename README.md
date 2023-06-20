@@ -1,6 +1,9 @@
 
 <h2 align="center">Leyla Cards</h2>
-<img align="center" width="100" src="https://github.com/chiratsxki/LeylaCards/assets/107635322/3a5926a0-da04-4783-9ed5-8884e8b02d7a">
+
+<h2 align="center"><img align="center" width="100" src="https://github.com/chiratsxki/LeylaCards/assets/107635322/3a5926a0-da04-4783-9ed5-8884e8b02d7a"></h2>
+
+
 
 <details>
 <summary><h3>0.1-BETA</h3></summary>
