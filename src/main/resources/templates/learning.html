@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Leyla Cards</title>
   <link rel="icon" type="image/png" href="https://github.com/chiratsxki/SimpleBlockchain/assets/107635322/2973dfa2-ec8d-42d2-99dc-6729c213b3e5">
-
   <style>
     body {
       background-color: #17171a;
@@ -12,6 +11,7 @@
 
     .gray-square {
       background-color: #202026;
+
       position: fixed;
       width: 350px;
       height: 100vh;
@@ -107,58 +107,52 @@
     .viewCard {
       width: 300px;
       height: 400px;
-      position: absolute;
-      top: 200px;
-      left: 800px;
-      background-color: #202027;
+      background-color: #202026;
       display: flex;
-      flex-direction: column;
-      margin: 0 auto;
-      padding: 10px;
       border-radius: 10px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      position: relative;
+      bottom: 5px;
+      flex-direction: column;
     }
 
-    .viewOfFront {
+    .aHrefForDetails {
       font-family: sans-serif,serif;
       color: white;
-
-
     }
 
-    .editButton {
-      background-color: #202027;
-      position: absolute;
+    .details {
+      background-color: #202026;
+
+      top: 135px;
+      position: relative;
       border: none;
-      top: 340px;
-      left: 30px;
       color: #ffffff;
+      height: 50px;
       width: 100px;
-      padding: 10px 20px;
-      border-radius: 10px;
-      cursor: pointer;
+      border-radius: 40px;
       transition: background-color 0.3s ease;
     }
 
-    .editButton:hover {
-      background-color: #535859;
+    .details:hover {
+      background-color: #3c3f41;
     }
 
-    .deleteButton {
-      background-color: #202027;
+    .container {
       position: absolute;
-      border: none;
-      top: 340px;
-      left: 190px;
-      color: #ffffff;
-      width: 100px;
-      padding: 10px 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      top: 2%;
+      left: 50%;
     }
 
-    .deleteButton:hover {
-      background-color: #cc4949;
+    .posH3 {
+      align-items: center;
+    }
+
+    .pForBack {
+      font-family: sans-serif,serif;
+      color: white;
     }
 
     .gray-button3 {
@@ -183,6 +177,12 @@
       font-family: sans-serif,serif;
       color: white;
     }
+
+    a {
+      user-select: none;
+      text-decoration: none;
+    }
+
   </style>
 </head>
 <body>
@@ -191,11 +191,13 @@
     <div class="labelIcon">
       <img src="https://github.com/chiratsxki/SimpleBlockchain/assets/107635322/2973dfa2-ec8d-42d2-99dc-6729c213b3e5" width="60" height="60">
     </div>
+
     <div class="labelText">
       <a href="/">
         <h2 class="leylaText">Leyla Cards</h2>
       </a>
     </div>
+
   </div>
   <a href="/allCards">
     <button class="gray-button" >
@@ -212,40 +214,38 @@
       <h3 class="custom-font3">Learn</h3>
     </button>
   </a>
-  </a>
 </div>
-<div th:each="el : ${post}">
-  <div class="viewCard">
-    <h2 class="viewOfFront">Front</h2>
-    <a class="viewOfFront" th:text="${el.frontSide}"/>
-    <h2 class="viewOfFront">Back</h2>
-    <a class="viewOfFront" th:text="${el.backSide}"/>
-    <a th:href="'/card/' + ${el.id} + '/edit'">
-      <button class="editButton">
-        <p class="custom-font">Edit</p>
-      </button>
-    </a>
-    <form th:action="'/card/' + ${el.id} + '/remove'" method="post">
-        <button type="submit" class="deleteButton">
-          <p class="custom-font">Delete</p>
-        </button>
-      </a>
-    </form>
+
+
+<div class="container">
+  <div th:each="el : ${cards}" class="viewCard">
+    <div class="posH3">
+      <h3 align="center" class="aHrefForDetails" th:text="${el.frontSide}"></h3>
+    </div>
+
+    <button class="details" onclick="toggleText(this)">Back side</button>
+
+    <div class="cardDetails" style="display: none;">
+      <h3 class="pForBack" th:text="${el.backSide}"></h3>
+    </div>
   </div>
-
-
-
-
-
-
-
-
-
-
 </div>
 
 
-
+<script>
+  function toggleText(button) {
+    var card = button.parentNode;
+    var x = card.querySelector(".cardDetails");
+    var y = card.querySelector(".aHrefForDetails");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      y.style.display = "none";
+    } else {
+      x.style.display = "none";
+      y.style.display = "block";
+    }
+  }
+</script>
 
 </body>
 </html>

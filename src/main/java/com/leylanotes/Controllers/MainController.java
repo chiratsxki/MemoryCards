@@ -89,4 +89,12 @@ public class MainController {
         return "allCards";
     }
 
+    @GetMapping("/learning")
+    public String learnAllCards(Model model) {
+        Iterable<Cards> cardsIterable = cardsRepository.findAll();
+        model.addAttribute("cards", cardsIterable);
+        return "learning";
+    }
+
+
 }
