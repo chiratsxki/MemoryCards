@@ -1,8 +1,8 @@
 
-<h2 align="center">Leyla Cards</h2>
+<h2 align="center">Memory Cards</h2>
 
 
-Leyla Cards is my flashcards web service, provides the ability to memorize information
+Memory Cards is my flashcards web service, provides the ability to memorize information
 
 ● Built using Maven to manage dependencies and automate the build process.
   
